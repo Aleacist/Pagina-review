@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!--Cargas-->
+    <link rel="stylesheet" type="text/css" href="../Recursos/Css/Estilo.css">
+    <link rel="icon" type="image/x-icon" href="../Recursos/Img/favicon.ico">
+
+
+    <!--Titulo-->  
+    <title>Juegos</title>
+</head>
+
+
+<body>
+    <!--Scripts-->
+    <script src="../Recursos/Js/SideBar.js"></script>
+ 
+    
+    <!--encabezado-->  
+    <div class="sticky">
+        <header>
+            <img src="../Recursos/Img/Pajaro.png" alt="imagenheader" class="imagenheader">
+            <h1 class="textheader">  MY REVIEW</h1>
+            <input class="buscarheader" type="text" placeholder="  Buscar">
+            <a href="../Login.html"><img src="../Recursos/Img/icono.png" alt="imagenlogin" class="imagenlogin"></a>
+        </header>
+    </div> 
+
+
+<!-- Boton Abrir Barra pegable -->
+    <nav id="OpenSidebar">
+        <button class="interactivo boton" onclick="AbrirSideBar();" id="barras">☰</button>
+    </nav>
+
+
+<!--Boton Cerrar barra pegable-->
+<div class="index" id="Sidebar" >
+    <button class="interactivo boton"onclick="CerrarSideBar();">Cerrar &times;</button>
+
+
+<!--Boton Home-->
+    <a href="../index.html"><button class="interactivo boton" >Home</button></a>
+
+
+<!--Boton Ocio con accordion-->
+        <button class="accordion">   
+            <div class="accordionMn"><span >Ocio</span></div>
+            <div style="padding: 1px;"></div>
+        <div class="submenus accordion-focus:submenus">
+            <a class="submenusA" href="#">Juegos</a>
+            <a class="interactivo2  submenusA" href="Libros.html">Libros</a>
+            <a class="interactivo2  submenusA" href="Series.html">Series</a>
+            <a class="interactivo2  submenusA" href="Peliculas.html">Peliculas</a>
+        </div>
+    </button>
+
+<!--Boton Viajes con accordion-->
+    <button class="accordion"> 
+        <div class="accordionMn"><span>Viajes</span ></div>
+        <div class="submenus accordion-focus:submenus">
+            <a class="interactivo2  submenusA" href="../Viajes/Hoteles.html">Hoteles</a>
+            <a class="interactivo2  submenusA" href="../Viajes/Patrimonios.html">Patrimonios culturales</a>
+        </div>
+    </button>
+
+</div>
+
+<!--Texto -->
+<main id="Main">
+    <div style="flex-wrap: nowrap;flex-grow:1;">
+    <div ><p class="textoDestacado">Destacados</p>
+        <div class="imagenDestacadoLinea">
+            <div class="imagenDestacado">
+                <img src="../Recursos/Img/thewitness.jpeg">
+            </div>
+            <div class="imagenDestacado ">
+                <img src="../Recursos/Img/interrogacion.png">
+            </div>
+            <div class="imagenDestacado">
+                <img src="../Recursos/Img/interrogacion.png">
+            </div>
+            <!-- <div class="imagenDestacado">
+                <img src="../Recursos/Img/interrogacion.png">
+            </div>
+            <div class="imagenDestacado">
+                <img src="../Recursos/Img/interrogacion.png">
+            </div>
+            <div class="imagenDestacado">
+                <img src="../Recursos/Img/interrogacion.png">
+            </div>
+            <div class="imagenDestacado">
+                <img src="../Recursos/Img/interrogacion.png">
+            </div> -->
+            <div class="imagenDestacado">
+                <img src="../Recursos/Img/interrogacion.png">
+            </div>
+            <div class="imagenDestacado">
+                <img src="../Recursos/Img/interrogacion.png">
+            </div>
+            <div class="imagenDestacado">
+                <img src="../Recursos/Img/interrogacion.png">
+            </div>
+            <div class="imagenDestacado">
+                <img src="../Recursos/Img/interrogacion.png">
+            </div>
+            <div class="imagenDestacado">
+                <img src="../Recursos/Img/interrogacion.png">
+            </div>
+            <div class="imagenDestacado">
+                <img src="../Recursos/Img/interrogacion.png">
+            </div>
+            <div class="imagenDestacado">
+                <img src="../Recursos/Img/thewitness.jpeg">
+            </div>
+        </div>
+        <div ><p class="textoDestacado">Puzzle</p>
+            <div class="imagenDestacadoLinea">
+                <div class="imagenDestacado">
+                    <img src="../Recursos/Img/thewitness.jpeg">
+                </div>
+
+            </div>
+    </div>
+</div>
+</main>
+
+
+</body>
+
+</html>

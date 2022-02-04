@@ -1,0 +1,126 @@
+* {
+  text-decoration: none;
+}
+
+/* Colores */
+:root {
+  --firstestilo-color: #22cdc2;
+  --secondestilo-color: white;
+  --thirdestilo-color: #169088;
+}
+
+/*Divisores*/
+
+body {
+  font-family: sans-serif;
+}
+
+header {
+  background-color: var(--firstestilo-color);
+  padding: 2px;
+  display: flex;
+  flex-wrap: nowrap;
+  align-items: flex-start;
+}
+
+head {
+  margin: 0px auto;
+  color: rgb(2, 2, 2);
+}
+
+body {
+  margin: 0px auto;
+  background-color: var(--secondestilo-color);
+}
+main {
+  color: rgb(70, 70, 70);
+  font-weight: bold;
+  transition: 1s;
+  background-color: var(--secondestilo-color);
+  flex-wrap: wrap;
+  overflow: hidden;
+  /* flex */
+}
+
+img {
+  height: 125px;
+  max-width: 220px;
+  object-fit: cover;
+}
+
+/*Pasar cursor por arriba*/
+.interactivo:hover {
+  background-color: var(--thirdestilo-color);
+  transition: 0.6s;
+  cursor: pointer;
+}
+
+.interactivo2:hover {
+  background-color: var(--thirdestilo-color);
+  color: whitesmoke;
+  transition: 0.3s;
+  cursor: pointer;
+}
+
+/* Index divs */
+
+div.sticky {
+  position: -webkit-sticky;
+  position: sticky;
+  top: 0;
+  z-index: 1;
+}
+.flex{
+  display: flex;
+}
+.block {
+  display: block;
+}
+.linea {
+  display: inline-flex;
+}
+
+.lineaB {
+  display: inline-block;
+}
+
+#maintutorial {
+  /*position:absolute;
+  left: 820px;*/
+  font-size: 20px;
+  margin-top: 4px;
+  text-indent: 0px;
+  font-weight: normal;
+}
+
+.formularioRegistrarse {
+  padding: 10px 40px;
+  color: rgb(70, 70, 70);
+  text-indent: 0px;
+  background-color: whitesmoke;
+}
+.invi {
+  display: none;
+}
+
+/* @media (max-width: 768px) {
+	.title_wrapper {
+		text-align: center;
+		left: 0;
+	}
+	.title_wrapper h1 {
+		font-size: 32px !important;
+		width: 100%;
+	}
+	.container {
+		padding: 20px;
+	}
+}
+@media (max-width: 480px) {
+	.column.is-one-quarter img {
+		width: 100%;
+		margin-bottom: 7rem;
+	}
+} */
+
+/* external css: flickity.css */

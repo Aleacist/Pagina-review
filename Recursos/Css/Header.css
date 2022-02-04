@@ -1,0 +1,89 @@
+/*Colores*/
+:root {
+  --headerfirst-color: black;
+  --headersecond-color: white;
+  --headerthird-color: #6ad4cd;
+}
+a {
+  text-decoration: none;
+}
+.textheader {
+  text-shadow: 2px 3px 5px var(--headerfirst-color);
+  margin-right: auto;
+  font-size: 25px;
+  margin-top: 20px;
+  text-align: right;
+}
+.imagenheader {
+  width: 64px;
+  height: 64px;
+  padding: 3px;
+}
+.imagenlogin {
+  margin-top: 30px;
+  width: 30px;
+  height: 30px;
+  margin-left: auto;
+  background: none;
+  cursor: pointer;
+}
+.buscarheader {
+  margin-top: 40px;
+  margin-right: 5px;
+  border-radius: 10px;
+  background-color: var(--headerthird-color);
+  color: var(--headerfirst-color);
+}
+.buscarheader::placeholder {
+  color: var(--headerfirst-color);
+}
+.busqueda {
+  background-color: rgb(50, 50, 50);
+  color: var(--headersecond-color);
+  border: var(--headerfirst-color);
+  padding: 10px;
+}
+
+.busqueda::placeholder {
+  text-align: left;
+  color: var(--headersecond-color);
+}
+
+#imagenlogin {
+  width: 166px;
+  height: 166px;
+  background: none;
+  cursor: default;
+  margin: 0px auto;
+}
+div.perfil {
+  right: -97px;
+  margin-top: -16px;
+  position: absolute;
+  transition: 0.3s;
+}
+ul.perfil {
+  list-style: none;
+  background-color:var(--firstnav-color);
+  padding-top: 2px;
+  padding-bottom: 2px;
+  padding-left: 0px;
+  text-align: center;
+  display: none;
+}
+li.perfil {
+  font-size: 18px;
+  background:var(--secondnav-color);
+  color: var(--thirdnav-color);
+  padding-left: 10px;
+  padding-top: 3px;
+  padding-bottom: 3px;
+  padding-right: 5px;
+}
+li.perfil:hover{
+  background-color: var(--thirdestilo-color); 
+  transition: 0.3s;
+}
+li.perfil a{
+  color: var(--thirdnav-color);
+}

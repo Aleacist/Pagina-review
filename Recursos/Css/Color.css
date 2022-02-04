@@ -1,0 +1,122 @@
+
+/*Cabezera*/
+.header { 
+  background-color:#22CDC2;
+  text-align: center;
+  font-size: 35px;
+  padding: 1px;
+}
+/*Barra de navegacion*/
+.sidenav {
+  height: 100%;
+  width: 115px;
+  top: 176px;
+  z-index: 0;
+  left: 0;
+  position:absolute;
+  background-color:rgb(40, 40, 40);
+  text-align: center;
+  overflow-x: hidden;
+  display:block
+}
+.index {
+  height: 100%;
+  width: 115px;
+  z-index: 0;
+  top: 176px;
+  position:absolute;
+  background-color:rgb(40, 40, 40);
+  color: white;
+  overflow-x: hidden;
+  text-align: center;
+  display: none;
+}
+
+.accordion {
+  background-color: rgb(50, 50, 50);
+  color: white;
+  border: none;
+  width: 100%;
+  height: 30px;
+}
+.accordion:hover{
+  background-color: #169088;
+  transition: 0.6s;
+  cursor: pointer;
+}
+
+.panel {
+  padding: 0 18px;
+  display: none;
+  overflow: hidden;
+}
+
+button{
+  background-color: rgb(50, 50, 50);
+  color: white;
+  border: none;
+  width: 100%;
+  height: 30px;
+  font-size: 20px;
+ margin-bottom: 2px;
+  margin-top: 2px;
+}
+.interactivo:hover{
+  background-color: #169088; 
+  transition: 0.6s;
+  cursor: pointer; 
+}
+.interactivo2:hover{
+  background-color: #23dfd2; 
+  color: whitesmoke;
+  transition: 0.3s;
+  cursor: pointer; 
+}
+::placeholder{
+  text-align:left;
+  color: white;
+  size: 10px;
+}
+
+.content{
+  margin-left: 115px;
+  padding:0px 40px;
+  color:  rgb(70, 70, 70);
+}
+
+
+/*Titulo*/
+head{   
+     margin: 0px auto;
+     color: rgb(2, 2, 2);
+}
+
+
+
+/*cuerpo*/
+body{
+  margin: 0px auto;
+  background-color: white;
+  /*background-image: url('prueba.png');
+  color: rgb(32, 32, 32);
+  background-repeat: no-repeat;
+  background-size: cover;*/
+}
+
+h1{
+  color:rgb(40, 40, 40);
+  cursor: default; 
+}
+
+
+a{
+  color: white;
+  text-decoration: none;
+  margin: 4px;
+  cursor: default; 
+}
+img{
+  width:172px;
+  height:172px;
+}
+

@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!--Cargas-->
+    <link rel="stylesheet" type="text/css" href="Recursos/Css/Estilo.css" />
+    <link rel="icon" type="image/x-icon" href="Recursos/Img/favicon.ico" />
+
+    <!--Titulo-->
+    <title>My review</title>
+  </head>
+
+  <body>
+    <!--Scripts-->
+    <script src="Recursos/Js/SideBar.js"></script>
+
+    <!--encabezado-->
+    <header>
+      <a href="Login.html"
+        ><img
+          src="Recursos/Img/icono.png"
+          alt="imagenlogin"
+          class="imagenlogin"
+      /></a>
+      <h1 style="text-shadow: 2px 3px 5px black; position: relative">
+        MY REVIEW
+      </h1>
+    </header>
+
+    <!--Texto -->
+
+    <main>
+      <h1 style="font-size: 35px">¡Bienvenido a MyReview!</h1>
+      <p style="font-size: 20px; margin-top: 0px">
+        My review es una página de valoracion elaborada con la finalidad de ver
+        o hacer reviews de varios productos.<br />
+        Estas reviews disponen de un sistema de media, el cual permite ver la
+        puntación general dada por el público, aparte de la que hemos otorgado.
+        Ademas tambien disponemos de una sección dedicada a comentar el
+        razonamiento detras de las puntaciones otorgadas a ese producto.
+      </p>
+      <br />
+      <h1 style="font-size: 35px">Tutorial</h1>
+      <p style="font-size: 20px; margin-top: 0px">
+        Como hemos comentado anteriormente esta pagina dispone de una serie de
+        utencilios que os permitiran hacer las reviews o navegar atraves de la
+        web. Para acceder a este breve tutorial dadle a la imagen de abajo
+      </p>
+      <br />
+      <a href="Tutorial.html" style="align-self: center"
+        ><img
+          alt="Tutorial"
+          src="/Recursos/Img/tutorial.png"
+          style="cursor: pointer"
+      /></a>
+    </main>
+
+    <!-- Boton Abrir Barra pegable -->
+    <nav id="OpenSidebar">
+      <input class="busqueda" type="text" placeholder="Buscar" /><br />
+      <button class="interactivo boton" onclick="AbrirSideBar();" id="barras">
+        ☰
+      </button>
+    </nav>
+
+    <!--Boton Cerrar barra pegable-->
+    <div class="index" id="Sidebar">
+      <button class="interactivo boton" onclick="CerrarSideBar();">
+        Cerrar ×
+      </button>
+
+      <!--Boton Home-->
+      <button class="boton">Home</button>
+
+      <!--Boton Ocio con accordion-->
+      <button
+        class="accordion"
+        style="font-size: 20px; margin-bottom: 2px; margin-top: 2px"
+      >
+        Ocio
+      </button>
+      <div class="panel">
+        <a class="interactivo2" href="Ocio/Juegos.html">Juegos</a><br />
+        <a class="interactivo2" href="Ocio/Libros.html">Libros</a><br />
+        <a class="interactivo2" href="Ocio/Series.html">Series</a><br />
+        <a class="interactivo2" href="Ocio/Peliculas.html">Peliculas</a>
+      </div>
+      <!--Boton Viajes con accordion-->
+
+      <button
+        class="accordion"
+        style="font-size: 20px; margin-bottom: 2px; margin-top: 2px"
+      >
+        Viajes
+      </button>
+      <div class="panel">
+        <a class="interactivo2" href="Viajes/Hoteles.html">Hoteles</a>
+        <a class="interactivo2" href="Viajes/Patrimonios.html"
+          >Patrimonios culturales</a
+        >
+      </div>
+    </div>
+
+    <script>
+      /* Script para el Accordion */
+      var acc = document.getElementsByClassName("accordion");
+      var i;
+      for (i = 0; i < acc.length; i++) {
+        acc[i].addEventListener("click", function () {
+          var panel = this.nextElementSibling;
+          if (panel.style.display === "block") {
+            panel.style.display = "none";
+          } else {
+            panel.style.display = "block";
+          }
+        });
+      }
+    </script>
+  </body>
+</html>

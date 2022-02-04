@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!--Cargas-->
+    <link rel="stylesheet" type="text/css" href="Recursos/Css/Estilo.css" />
+    <link rel="icon" type="image/x-icon" href="Recursos/Img/favicon.ico" />
+    <link type="text/php" href="http://localhost/login.php" />
+
+    <!--Titulo-->
+    <title>Login</title>
+  </head>
+
+  <body>
+    <!--Scripts-->
+    <script src="Recursos/Js/SideBar.js"></script>
+
+    <!--encabezado-->
+    <header>
+      <img src="Recursos/Img/icono.png" alt="Icono" id="imagenlogin" />
+    </header>
+
+    <!-- Boton Abrir Barra pegable -->
+    <nav id="OpenSidebar">
+      <button class="interactivo boton" onclick="AbrirSideBar();" id="barras">
+        ☰
+      </button>
+    </nav>
+
+    <!--Boton Cerrar barra pegable-->
+    <div class="index" id="Sidebar">
+      <button class="interactivo boton" onclick="CerrarSideBar();">
+        Cerrar ×
+      </button>
+
+      <!--Boton Home-->
+      <a href="Index.html"><button class="interactivo boton">Home</button></a>
+
+      <!--Boton Ocio con accordion-->
+      <button class="accordion">
+        <div class="accordionMn"><span>Ocio</span></div>
+        <div style="padding: 1px"></div>
+        <div class="submenus accordion-focus:submenus">
+          <a class="interactivo2 submenusA" href="Ocio/Juegos.html">Juegos</a>
+          <a class="interactivo2 submenusA" href="Ocio/Libros.html">Libros</a>
+          <a class="interactivo2 submenusA" href="Ocio/Series.html">Series</a>
+          <a class="interactivo2 submenusA" href="Ocio/Peliculas.html"
+            >Peliculas</a
+          >
+        </div>
+      </button>
+
+      <!--Boton Viajes con accordion-->
+      <button class="accordion">
+        <div class="accordionMn"><span>Viajes</span></div>
+        <div class="submenus accordion-focus:submenus">
+          <a class="interactivo2 submenusA" href="Viajes/Hoteles.html"
+            >Hoteles</a
+          >
+          <a class="interactivo2 submenusA" href="Viajes/Patrimonios.html"
+            >Patrimonios culturales</a
+          >
+        </div>
+      </button>
+    </div>
+
+    <!--Texto -->
+    <main id="Main">
+      <form action="" method="post" target="_self">
+        <br />
+        <fieldset class="formularioRegistrarse">
+          <legend>Datos Usuario</legend>
+          <label id="user" style="font-size: 25px"> Usuario:</label><br />
+          <input name="Usuario" type="text" required /><br />
+          <label id="passw" style="font-size: 25px">Contraseña:</label><br />
+          <input name="Pass" type="password" required />
+          <div id="Resultado"></div>
+          <br />
+          <input type="submit" value="Entrar" name="input" />
+        </fieldset>
+      </form>
+      <br />
+      <div>
+        <fieldset class="formularioRegistrarse">
+          <legend>Si no tienes cuenta</legend>
+          <a href="Register.html"><button>Registrate</button></a>
+        </fieldset>
+      </div>
+    </main>
+  </body>
+</html>
