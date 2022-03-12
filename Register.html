@@ -1,113 +1,226 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <!--Cargas-->
-    <link rel="stylesheet" type="text/css" href="Recursos/Css/Estilo.css">
-    <link rel="icon" type="image/x-icon" href="Recursos/Img/favicon.ico">
+  <!--Cargas-->
+  <link rel="stylesheet" type="text/css" href="Recursos/Css/SideMenu.css" />
+  <link rel="stylesheet" type="text/css" href="Recursos/Css/Estilo.css" />
+  <link rel="stylesheet" type="text/css" href="Recursos/Css/Header.css" />
+  <link rel="stylesheet" type="text/css" href="Recursos/Css/Index.css" />
+  <link rel="stylesheet" type="text/css" href="Recursos/Css/Register.css" />
+  <link rel="icon" type="image/x-icon" href="Recursos/Img/favicon.ico">
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet" />
 
-
-    <!--Titulo con imagen-->   
-    <title>My review</title>
+  <!--Titulo-->
+  <title>My review</title>
 </head>
 
-
 <body>
-    <!--Scripts-->
-    <script src="Recursos/Js/SideBar.js"></script>
 
-    
-    <!--encabezado-->   
-<header>
-    <img alt="imagenlogin" src="Recursos/Img/icono.png" alt="Imagenlogin" id="imagenlogin">
-</header>
+  <!--encabezado-->
+  <!-- encabezado-->
+  <div class="sticky">
+    <header>
+      <img src="Recursos/Img/Pajaro.png" alt="imagenheader" class="imagenheader" />
+      <h1 class="textheader">MY REVIEW</h1>
+      <input id="myInput" onkeyup="myFunction()" class="buscarheader" type="text" placeholder="  Buscar" />
+      <button style="background-color: transparent; border: none" onclick="AbrirPerfil()">
+        <img src="Recursos/Img/icono.png" alt="imagenlogin" class="imagenlogin" />
+      </button>
+    </header>
 
+    <div class="flex">
+      <div class="perfil" id="PerfilAnimacion">
+        <ul class="perfil" id="Perfil">
+          <li class="perfil">
+            <a onclick="AbrirModal()" href="Home.html">Iniciar sesion</a>
+          </li>
+          <li style="padding: 2px"></li>
+          <li class="perfil">
+            Registrarse
+          </li>
+        </ul>
+      </div>
 
-<!--Formularios -->
-<main>
-    <form action="Guardado.html">
-    <br>
-    <fieldset class="formularioRegistrarse">
-        <legend>Datos Usuario</legend>
-        <div style="font-size: 20px;">
-            <label for="username">Nombre de Usuario:</label><br>
-            <input type="text" id="username" name="username" required> <br>
-            <label for="password1" >Contraseña:</label><br>
-            <input type="password" id="password1" name="password" required> <br>
-            <label for="password2">Repetir contraseña:</label><br>
-            <input type="password" id="password2" name="password" required> 
-        </div>
-    </fieldset><br>
-    <fieldset class="formularioRegistrarse">
-        <legend>Datos personales</legend>
-        <div style="font-size: 20px;">
-            <label for="email">Correo:</label><br>
-            <input type="email" placeholder="nombre@correo.com" id="email" required> <br>
-            <label for="birthdate" >Fecha de nacimiento:</label><br>
-            <input type="date" min="1950-01-01" id="birthdate" required> 
-            <br><br>
-            <input type="submit" value="Aceptar">
-        </div>
-    </fieldset>
-    <br><br>
-</form>
-    
-</main>
+      <!-- Boton Abrir Barra pegable -->
+      <nav id="OpenSidebar">
+        <button class="interactivo boton" onclick="AbrirSideBar()" id="barras">
+          ☰</button><br />
+      </nav>
 
-
-    <!-- Boton Abrir Barra pegable -->
-    <nav id="OpenSidebar">
-        <input class="busqueda" type="text"  placeholder="Buscar">
-        <button class="interactivo boton" onclick="AbrirSideBar();" id="barras">☰</button>
-    </nav>
-
-
-    <!--Boton Cerrar barra pegable-->
-    <div class="index" id="Sidebar">
-        <button class="interactivo boton" onclick="CerrarSideBar();">Cerrar ×</button>
-
+      <!--Boton Cerrar barra pegable-->
+      <div class="index" id="Sidebar">
+        <button class="interactivo boton" onclick="CerrarSideBar()">
+          Cerrar ×
+        </button>
 
         <!--Boton Home-->
-        <a href="index.html"><button class="interactivo boton" >Home</button></a>
-
+        <a href="index.html"><button class="interactivo boton">Home</button></a>
 
         <!--Boton Ocio con accordion-->
-        <button class="accordion" style="font-size: 20px;margin-bottom: 2px;margin-top: 2px;">Ocio</button>
-        <div class="panel">
-            <a class="interactivo2" href="Ocio/Juegos.html">Juegos</a><br>
-            <a class="interactivo2" href="Ocio/Libros.html">Libros</a><br>
-            <a class="interactivo2" href="Ocio/Series.html">Series</a><br>
-            <a class="interactivo2" href="Ocio/Peliculas.html">Peliculas</a>
-        </div>
+        <button class="accordion">
+          <div class="accordionMn"><span>Ocio</span></div>
+          <!-- <div style="padding: 1px;"></div> -->
+          <div class="submenus accordion-focus:submenus">
+            <a class="interactivo submenusA" href="Ocio/Juegos.html">Juegos</a>
+            <a class="interactivo2 submenusA" href="Ocio/Libros.html">Libros</a>
+            <a class="interactivo2 submenusA" href="Ocio/Series.html">Series</a>
+            <a class="interactivo2 submenusA" href="Ocio/Peliculas.html">Peliculas
+            </a>
+          </div>
+        </button>
+
         <!--Boton Viajes con accordion-->
-
-
-        <button class="accordion" style="font-size: 20px;margin-bottom: 2px;margin-top: 2px;">Viajes</button>
-        <div class="panel">
-        <a class="interactivo2" href="Viajes/Hoteles.html">Hoteles</a>
-        <a class="interactivo2" href="Viajes/Patrimonios.html">Patrimonios culturales</a>
-        </div>
-
+        <button class="accordion">
+          <div class="accordionMn"><span>Viajes</span></div>
+          <div class="submenus accordion-focus:submenus">
+            <a class="interactivo2 submenusA" href="Viajes/Hoteles.html">
+              Hoteles
+            </a>
+            <a class="interactivo2 submenusA" href="Viajes/Patrimonios.html">
+              Patrimonios culturales
+            </a>
+          </div>
+        </button>
+      </div>
     </div>
+  </div>
 
+  <main id="Main">
+    <form action="Guardado.html">
+      <br>
+      <fieldset class="formularioRegistrarse">
+        <legend>Datos Usuario</legend>
+        <div style="font-size: 20px;">
+          <label for="username">Nombre de Usuario:</label><br>
+          <input type="text" id="username" name="username" required> <br>
+          <label for="password1">Contraseña:</label><br>
+          <input type="password" id="password1" name="password" required> <br>
+          <label for="password2">Repetir contraseña:</label><br>
+          <input type="password" id="password2" name="password" required> <br>
+          <input type="reset">
+        </div>
+      </fieldset><br>
+      <fieldset class="formularioRegistrarse">
+        <legend>Datos personales</legend>
+        <div class="genero">
+          <label for="email">Correo:</label><br>
+          <input type="email" placeholder="nombre@correo.com" id="email" required> <br>
+          <label for="birthdate">Fecha de nacimiento:</label><br>
+          <input type="date" min="1950-01-01" id="birthdate" required><br>
+          <label >Genero:</label><br>
+          <label class="genero">M<input type="radio" name="Genero"></label><label class="genero">F<input type="radio"
+              name="Genero"></label><br>
+          <div class="custom-select" style="width:200px;">
+            <select >
+              <option value="0" >Razon para registrarse</option>
+              <option value="1">Juegos</option>
+              <option value="2">Libros</option>
+              <option value="3">Series</option>
+              <option value="4">Peliculas</option>
+              <option value="5">Varias</option>
+            </select>
+          </div>
 
+          <label class="genero"><input type="checkbox" >Acepta los terminos</label><br>
+          <label class="genero"><input type="checkbox" >Desea recibir correos</label><br><br>
+          <input type="submit" value="Aceptar">
+          
+        </div>
+      </fieldset>
+      <br><br>
+    </form>
 
-    <script> 
-    /* Script para el Accordion */
-    var acc = document.getElementsByClassName("accordion");
-    var i;
-    for (i = 0; i < acc.length; i++) {
-      acc[i].addEventListener("click", function() {
-        var panel = this.nextElementSibling;
-        if (panel.style.display === "block") {
-        panel.style.display = "none";
+  </main>
+  <!--Scripts-->
+  <script>
+    var x, i, j, l, ll, selElmnt, a, b, c;
+    /*look for any elements with the class "custom-select":*/
+    x = document.getElementsByClassName("custom-select");
+    l = x.length;
+    for (i = 0; i < l; i++) {
+      selElmnt = x[i].getElementsByTagName("select")[0];
+      ll = selElmnt.length;
+      /*for each element, create a new DIV that will act as the selected item:*/
+      a = document.createElement("DIV");
+      a.setAttribute("class", "select-selected");
+      a.innerHTML = selElmnt.options[selElmnt.selectedIndex].innerHTML;
+      x[i].appendChild(a);
+      /*for each element, create a new DIV that will contain the option list:*/
+      b = document.createElement("DIV");
+      b.setAttribute("class", "select-items select-hide");
+      for (j = 1; j < ll; j++) {
+        /*for each option in the original select element,
+        create a new DIV that will act as an option item:*/
+        c = document.createElement("DIV");
+        c.innerHTML = selElmnt.options[j].innerHTML;
+        c.addEventListener("click", function (e) {
+          /*when an item is clicked, update the original select box,
+          and the selected item:*/
+          var y, i, k, s, h, sl, yl;
+          s = this.parentNode.parentNode.getElementsByTagName("select")[0];
+          sl = s.length;
+          h = this.parentNode.previousSibling;
+          for (i = 0; i < sl; i++) {
+            if (s.options[i].innerHTML == this.innerHTML) {
+              s.selectedIndex = i;
+              h.innerHTML = this.innerHTML;
+              y = this.parentNode.getElementsByClassName("same-as-selected");
+              yl = y.length;
+              for (k = 0; k < yl; k++) {
+                y[k].removeAttribute("class");
+              }
+              this.setAttribute("class", "same-as-selected");
+              break;
+            }
+          }
+          h.click();
+        });
+        b.appendChild(c);
+      }
+      x[i].appendChild(b);
+      a.addEventListener("click", function (e) {
+        /*when the select box is clicked, close any other select boxes,
+        and open/close the current select box:*/
+        e.stopPropagation();
+        closeAllSelect(this);
+        this.nextSibling.classList.toggle("select-hide");
+        this.classList.toggle("select-arrow-active");
+      });
+    }
+    function closeAllSelect(elmnt) {
+      /*a function that will close all select boxes in the document,
+      except the current select box:*/
+      var x, y, i, xl, yl, arrNo = [];
+      x = document.getElementsByClassName("select-items");
+      y = document.getElementsByClassName("select-selected");
+      xl = x.length;
+      yl = y.length;
+      for (i = 0; i < yl; i++) {
+        if (elmnt == y[i]) {
+          arrNo.push(i)
         } else {
-        panel.style.display = "block";
-        }});}
-    </script>
-
+          y[i].classList.remove("select-arrow-active");
+        }
+      }
+      for (i = 0; i < xl; i++) {
+        if (arrNo.indexOf(i)) {
+          x[i].classList.add("select-hide");
+        }
+      }
+    }
+    /*if the user clicks anywhere outside the select box,
+    then close all select boxes:*/
+    document.document.addEventListener("click", closeAllSelect);</script>
+  <script src="https://kit.fontawesome.com/4ba71b72f6.js" crossorigin="anonymous"></script>
+  <script src="Recursos/Js/SideBar.js"></script>
 </body>
+
 </html>

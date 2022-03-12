@@ -1,0 +1,7 @@
+
+table{ width:100%;font-size: 25px;}
+tbody{ text-align: center;}
+caption{ font-size: 30px;margin-bottom: 20px;}
+td,th{
+ border: 2px solid black;
+}

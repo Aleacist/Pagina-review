@@ -1,88 +1,220 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <!--Cargas-->
-    <link rel="stylesheet" type="text/css" href="../Recursos/Css/Estilo.css">
-    <link rel="icon" type="image/x-icon" href="../Recursos/Img/favicon.ico">
+  <!--Cargas-->
+  <link rel="stylesheet" type="text/css" href="../Recursos/Css/SideMenu.css" />
+  <link rel="stylesheet" type="text/css" href="../Recursos/Css/Estilo.css" />
+  <link rel="stylesheet" type="text/css" href="../Recursos/Css/Header.css" />
+  <link rel="stylesheet" type="text/css" href="../Recursos/Css/Index.css" />
+  <link rel="stylesheet" type="text/css" href="../Recursos/Css/Tablas.css" />
+  <link rel="icon" type="image/x-icon" href="../Recursos/Img/favicon.ico">
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet" />
 
 
-    <!--Titulo-->  
-    <title>Series</title>
+  <!--Titulo-->
+  <title>Series</title>
 </head>
 
-
 <body>
-    <!--Scripts-->
-    <script src="../Recursos/Js/SideBar.js"></script>
- 
-    
- <!--encabezado-->   
- <header>
-    <a href="../Login.html"><img alt="imagenlogin" src="../Recursos/Img/icono.png" class="imagenlogin"></a>
-    <h1 style=" text-shadow: 2px 3px 5px black;position: relative;">SERIES</h1>
- </header>
+  <!-- encabezado-->
+  <div class="sticky">
+    <header>
+      <img src="../Recursos/Img/Pajaro.png" alt="imagenheader" class="imagenheader" />
+      <h1 class="textheader">MY REVIEW</h1>
+      <input id="myInput" onkeyup="myFunction()" class="buscarheader" type="text" placeholder="  Buscar" />
+      <button style="background-color: transparent; border: none" onclick="AbrirPerfil()">
+        <img src="../Recursos/Img/icono.png" alt="imagenlogin" class="imagenlogin" />
+      </button>
+    </header>
 
+    <div class="flex">
+      <div class="perfil" id="PerfilAnimacion">
+        <ul class="perfil" id="Perfil">
+          <li class="perfil">
+            <a onclick="AbrirModal()" href="#">Iniciar sesion</a>
+          </li>
+          <li style="padding: 2px"></li>
+          <li class="perfil">
+            <a href="../Register.html"> Registrarse </a>
+          </li>
+        </ul>
+      </div>
+      <div class="modal" id="modal">
+        <div class="modal-content">
+          <form onsubmit="comprobar()">
+            <fieldset class="formularioRegistrarse">
+              <legend>Datos Usuario</legend>
+              <label  style="font-size: 25px"> Usuario:</label><br />
+              <input name="Usuario" id="Nombre" type="text" required /><br />
+              <label  style="font-size: 25px">Contraseña:</label><br />
+              <input name="Pass" id="Contraseña" type="password" required />
+              <div id="Resultado"></div>
+              <br/>
+              <input type="submit" />
+            </fieldset>
+          </form>
+        </div>
+      </div>
+      <!-- Boton Abrir Barra pegable -->
+      <nav id="OpenSidebar">
+        <button class="interactivo boton" onclick="AbrirSideBar()" id="barras">
+          ☰</button><br />
+      </nav>
 
-<!--Texto -->
-<main>
+      <!--Boton Cerrar barra pegable-->
+      <div class="index" id="Sidebar">
+        <button class="interactivo boton" onclick="CerrarSideBar()">
+          Cerrar ×
+        </button>
 
-</main>
+        <!--Boton Home-->
+        <a href="../index.html"><button class="interactivo boton">Home</button></a>
 
-<!-- Boton Abrir Barra pegable -->
-    <nav id="OpenSidebar">
-        <input class="busqueda" type="text" placeholder="Buscar">
-        <button class="interactivo boton" onclick="AbrirSideBar();" id="barras">☰</button>
-    </nav>
+        <!--Boton Ocio con accordion-->
+        <button class="accordion">
+          <div class="accordionMn"><span>Ocio</span></div>
+          <!-- <div style="padding: 1px;"></div> -->
+          <div class="submenus accordion-focus:submenus">
+            <a class="interactivo2 submenusA" href="Juegos.html">Juegos</a>
+            <a class="interactivo2 submenusA" href="Libros.html">Libros</a>
+            <a class="submenusA">Series</a>
+            <a class="interactivo2 submenusA" href="Peliculas.html">Peliculas
+            </a>
+          </div>
+        </button>
 
-
-<!--Boton Cerrar barra pegable-->
-<div class="index" id="Sidebar" >
-    <button class="interactivo boton"onclick="CerrarSideBar();">Cerrar &times;</button>
-
-
-<!--Boton Home-->
-    <a href="../index.html"><button class="interactivo boton" >Home</button></a>
-
-
-<!--Boton Ocio con accordion-->
-        <button class="accordion" style="font-size: 20px;margin-bottom: 2px;margin-top: 2px;">Ocio</button>
-    <div class="panel">
-        <a class="interactivo2" href="Juegos.html">Juegos</a><br>
-        <a class="interactivo2" href="Libros.html">Libros</a><br>
-        <a href="#">Series</a><br>
-        <a class="interactivo2" href="Peliculas.html">Peliculas</a>
+        <!--Boton Viajes con accordion-->
+        <button class="accordion">
+          <div class="accordionMn"><span>Viajes</span></div>
+          <div class="submenus accordion-focus:submenus">
+            <a class="interactivo2 submenusA" href="../Viajes/Hoteles.html">
+              Hoteles
+            </a>
+            <a class="interactivo2 submenusA" href="../Viajes/Patrimonios.html">
+              Patrimonios culturales
+            </a>
+          </div>
+        </button>
+      </div>
     </div>
-<!--Boton Viajes con accordion-->
-
-
-    <button class="accordion" style="font-size: 20px;margin-bottom: 2px;margin-top: 2px;">Viajes</button>
-    <div class="panel">
-        <a class="interactivo2" href="../Viajes/Hoteles.html">Hoteles</a>
-        <a class="interactivo2" href="../Viajes/Patrimonios.html">Patrimonios culturales</a>
+  </div>
+  <main id="Main">
+    <!-- Series -->
+    <div class="block">
+      <p class="textoLista">Series</p>
+      <div class="imagenDestacadoLinea">
+        <ul class="lineaimagenes">
+          <!-- boton para mover las imagenes de Serie a la izquierda -->
+          <button class="Slice" style="margin-right: 6px" onclick="moverImagenesSerieIzquierda()">
+            <i class="fas fa-chevron-left"></i>
+          </button>
+          <!-- Lista de series-->
+          <li class="lineabloque">
+            <div class="imagenDestacado imagenSliceSerie">
+              <img src="../Recursos/Img/arcane.png" alt="arcane" />
+            </div>
+          </li>
+          <li class="lineaB">
+            <div class="imagenDestacado imagenSliceSerie">
+              <img src="../Recursos/Img/casa de papel.png" alt="interrogacion" />
+            </div>
+          </li>
+          <li class="lineaB">
+            <div class="imagenDestacado imagenSliceSerie">
+              <img src="../Recursos/Img/interrogacion.png" />
+            </div>
+          </li>
+          <li class="lineaB">
+            <div class="imagenDestacado imagenSliceSerie">
+              <img src="../Recursos/Img/interrogacion.png" />
+            </div>
+          </li>
+          <li class="lineaB">
+            <div class="imagenDestacado imagenSliceSerie">
+              <img src="../Recursos/Img/thewitness.jpg" />
+            </div>
+          </li>
+          <li class="lineaB">
+            <div class="imagenDestacado imagenSliceSerie">
+              <img src="../Recursos/Img/interrogacion.png" />
+            </div>
+          </li>
+          <li class="lineaB">
+            <div class="imagenDestacado imagenSliceSerie">
+              <img src="../Recursos/Img/interrogacion.png" />
+            </div>
+          </li>
+          <li class="lineaB">
+            <div class="imagenDestacado imagenSliceSerie">
+              <img src="../Recursos/Img/interrogacion.png" />
+            </div>
+          </li>
+          <!-- boton para mover las imagenes de Serie a la derecha-->
+          <button class="Slice" style="margin-left: auto; margin-right: 10px" onclick="moverImagenesSerieDerecha()">
+            <i class="fas fa-chevron-right"></i>
+          </button>
+        </ul>
+      </div>
     </div>
+    <table>
+      <br>
+      <caption>Analisis de series</caption>
+      <thead>
+        <tr>
+          <th rowspan="5" scope="col">Series</th>
+          <th colspan="4" scope="col">Puntuaje</th>
+        </tr>
+        <tr>
+          <th>Temporadas</th>
+          <th>Capitulos</th>
+          <th>Banda sonora</th>
+          <th>Puntuacion</th>
 
-</div>
-
-
-
-<script> 
-    /* Script para el Accordion */
-var acc = document.getElementsByClassName("accordion");
-var i;
-for (i = 0; i < acc.length; i++) {
-  acc[i].addEventListener("click", function() {
-    var panel = this.nextElementSibling;
-    if (panel.style.display === "block") {
-    panel.style.display = "none";
-    } else {
-    panel.style.display = "block";
-    }});}
-
-</script>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <th><img src="../Recursos/Img/arcane.png"><br>arcane</th>
+          <td>1</td>
+          <td>9</td>
+          <td>9</td>
+          <td>9</td>
+        </tr>
+        <tr>
+          <th><img src="../Recursos/Img/fariña.png"><br>fariña</th>
+          <td>1</td>
+          <td>10</td>
+          <td>8</td>
+          <td>8</td>
+        </tr>
+        <tr>
+          <th><img src="../Recursos/Img/casa de papel.png"><br>la casa<br> de papel</th>
+          <td>5</td>
+          <td>41</td>
+          <td>7</td>
+          <td>8</td>
+        </tr>
+      </tbody>
+    </table>
+  </main>
+  <script
+  src="https://kit.fontawesome.com/4ba71b72f6.js"
+  crossorigin="anonymous"
+></script>
+<script src="../Recursos/Js/Size.js"></script>
+<script src="../Recursos/Js/SideBar.js"></script>
+<script src="../Recursos/Js/LoginModal.js"></script>
+<script src="../Recursos/Js/Perfilbar.js"></script>
+<script src="../Recursos/Js/Img.js"></script>
+<script src="../Recursos/Js/ImgSliceindexSerie.js"></script>
 </body>
 
 </html>

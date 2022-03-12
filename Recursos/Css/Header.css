@@ -19,6 +19,10 @@ a {
   height: 64px;
   padding: 3px;
 }
+button.imagenlogin1{
+  background-color: transparent;
+   border: none;
+}
 .imagenlogin {
   margin-top: 30px;
   width: 30px;
@@ -64,7 +68,7 @@ div.perfil {
 }
 ul.perfil {
   list-style: none;
-  background-color:var(--firstnav-color);
+  background-color: var(--firstnav-color);
   padding-top: 2px;
   padding-bottom: 2px;
   padding-left: 0px;
@@ -73,17 +77,48 @@ ul.perfil {
 }
 li.perfil {
   font-size: 18px;
-  background:var(--secondnav-color);
+  background: var(--secondnav-color);
   color: var(--thirdnav-color);
   padding-left: 10px;
   padding-top: 3px;
   padding-bottom: 3px;
   padding-right: 5px;
 }
-li.perfil:hover{
-  background-color: var(--thirdestilo-color); 
+li.perfil:hover {
+  background-color: var(--thirdestilo-color);
   transition: 0.3s;
 }
-li.perfil a{
+li.perfil a {
   color: var(--thirdnav-color);
+}
+.modal {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  padding-top: 100px; /* Location of the box */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(0, 0, 0); /* Fallback color */
+  background-color: rgba(0, 0, 0, 0.4); /* Black w/ opacity */
+}
+.modal-content {
+  background-color: #fefefe;
+  margin: auto;
+  padding: 20px;
+  border: 1px solid #888;
+  width: 80%;
+}
+
+@media only screen and (max-width: 400px) {
+  .imagenlogin {
+    display: none;
+  }
+}
+@media only screen and (max-width: 350px) {
+  .buscarheader {
+    display: none;
+  }
 }

@@ -1,0 +1,51 @@
+.genero {
+  font-size: 15px;
+  font-weight: normal;
+}
+label{font-size: 20px;}
+
+.custom-select {
+  position: relative;
+}
+
+.custom-select select {
+  display: none;
+}
+
+
+.select-selected.select-arrow-active:after {
+  border-color: transparent transparent white transparent;
+  top: 7px;
+}
+
+/*style the items (options), including the selected item:*/
+.select-items div,
+.select-selected {
+  padding-left: 2px;
+  border: 1px solid transparent;
+  background: white;
+  border-color: rgba(0, 0, 0,0.8);
+  cursor: pointer;
+  user-select: none;
+}
+
+/*style items (options):*/
+.select-items {
+  font-size: 15px;
+  position: absolute;
+  background-color: white;
+  top: 100%;
+  left: 0;
+  right: 0;
+  z-index: 99;
+}
+
+/*hide the items when the select box is closed:*/
+.select-hide {
+  display: none;
+}
+
+.select-items div:hover,
+.same-as-selected {
+  background-color: rgba(0, 0, 0, 0.1);
+}

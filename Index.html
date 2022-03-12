@@ -1,399 +1,343 @@
 <!DOCTYPE html>
 <html lang="es">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <!--Cargas-->
-    <link rel="stylesheet" type="text/css" href="Recursos/Css/SideMenu.css" />
-    <link rel="stylesheet" type="text/css" href="Recursos/Css/Estilo.css" />
-    <link rel="stylesheet" type="text/css" href="Recursos/Css/Header.css" />
-    <link rel="stylesheet" type="text/css" href="Recursos/Css/Index.css" />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500&display=swap"
-      rel="stylesheet"
-    />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Poppins&display=swap"
-      rel="stylesheet"
-    />
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <!--Titulo-->
-    <title>My review</title>
-  </head>
+  <!--Cargas-->
+  <link rel="stylesheet" type="text/css" href="Recursos/Css/SideMenu.css" />
+  <link rel="stylesheet" type="text/css" href="Recursos/Css/Estilo.css" />
+  <link rel="stylesheet" type="text/css" href="Recursos/Css/Header.css" />
+  <link rel="stylesheet" type="text/css" href="Recursos/Css/Index.css" />
+  <link rel="icon" type="image/x-icon" href="Recursos/Img/favicon.ico">
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet" />
 
-  <body>
-    <!--encabezado-->
-    <div class="sticky">
-      <header>
-        <img
-          src="Recursos/Img/Pajaro.png"
-          alt="imagenheader"
-          class="imagenheader"
-        />
-        <h1 class="textheader">MY REVIEW</h1>
-        <input
-          id="myInput"
-          onkeyup="myFunction()"
-          class="buscarheader"
-          type="text"
-          placeholder="  Buscar"
-        />
-        <button
-          style="background-color: transparent; border: none"
-          onclick="AbrirPerfil()"
-        >
-          <img
-            src="Recursos/Img/icono.png"
-            alt="imagenlogin"
-            class="imagenlogin"
-          />
+  <!--Titulo-->
+  <title>My review</title>
+</head>
+
+<body>
+  <!-- encabezado-->
+  <div class="sticky">
+    <header>
+      <img src="Recursos/Img/Pajaro.png" alt="imagenheader" class="imagenheader" />
+      <h1 class="textheader">MY REVIEW</h1>
+      <input onkeyup="Buscar()" class="buscarheader" type="text" placeholder="  Buscar" />
+      <button class="imagenlogin1" onclick="AbrirPerfil()">
+        <img src="Recursos/Img/icono.png" alt="imagenlogin" class="imagenlogin" />
+      </button>
+    </header>
+
+    <div class="flex">
+      <div class="perfil" id="PerfilAnimacion">
+        <ul class="perfil" id="Perfil">
+          <li class="perfil">
+            <a onclick="AbrirModal()" href="#">Iniciar sesion</a>
+          </li>
+          <li style="padding: 2px"></li>
+          <li class="perfil">
+            <a href="/Register.html"> Registrarse </a>
+          </li>
+        </ul>
+      </div>
+      <div class="modal" id="modal">
+        <div class="modal-content">
+          <form onsubmit="comprobar()">
+            <fieldset class="formularioRegistrarse">
+              <legend>Datos Usuario</legend>
+              <label style="font-size: 25px"> Usuario:</label><br />
+              <input name="Usuario" id="Nombre" type="text" required /><br />
+              <label style="font-size: 25px">Contraseña:</label><br />
+              <input name="Pass" id="Contraseña" type="password" required />
+              <div id="Resultado"></div>
+              <br />
+              <input type="submit" />
+            </fieldset>
+          </form>
+        </div>
+      </div>
+      <!-- Boton Abrir Barra pegable -->
+      <nav id="OpenSidebar">
+        <button class="interactivo boton" onclick="AbrirSideBar()" id="barras">
+          ☰</button><br />
+      </nav>
+
+      <!--Boton Cerrar barra pegable-->
+      <div class="index" id="Sidebar">
+        <button class="interactivo boton" onclick="CerrarSideBar()">
+          Cerrar ×
         </button>
-      </header>
 
-      <div class="flex">
-        <div class="perfil" id="PerfilAnimacion">
-          <ul class="perfil" id="Perfil">
-            <li class="perfil">
-              <a href="/Login.html">Iniciar sesion</a>
+        <!--Boton Home-->
+        <button class="boton">Home</button>
+
+        <!--Boton Ocio con accordion-->
+        <button class="accordion">
+          <div class="accordionMn"><span>Ocio</span></div>
+          <!-- <div style="padding: 1px;"></div> -->
+          <div class="submenus accordion-focus:submenus">
+            <a class="interactivo submenusA" href="Ocio/Juegos.html">Juegos</a>
+            <a class="interactivo2 submenusA" href="Ocio/Libros.html">Libros</a>
+            <a class="interactivo2 submenusA" href="Ocio/Series.html">Series</a>
+            <a class="interactivo2 submenusA" href="Ocio/Peliculas.html">Peliculas
+            </a>
+          </div>
+        </button>
+
+        <!--Boton Viajes con accordion-->
+        <button class="accordion">
+          <div class="accordionMn"><span>Viajes</span></div>
+          <div class="submenus accordion-focus:submenus">
+            <a class="interactivo2 submenusA" href="Viajes/Hoteles.html">
+              Hoteles
+            </a>
+            <a class="interactivo2 submenusA" href="Viajes/Patrimonios.html">
+              Patrimonios culturales
+            </a>
+          </div>
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!--Texto -->
+  <main id="Main">
+    <div class="linea">
+      <div class="lineal textocentrado">
+        <p>Tower Defend</p>
+        <a class="tutorialImagen" href="TowerDefend.html">
+          <img style="margin-top: 10px" alt="Tutorial" src="/Recursos/Img/tutorial.png" />
+        </a>
+      </div>
+      <div class="espacio"></div>
+      <div>
+        <p class="textoDestacado">Destacados</p>
+        <div class="imagenDestacadoLinea">
+          <!-- Reviews destacadas -->
+          <ul style="list-style: none; white-space: nowrap; padding: 0%">
+            <li class="lineaB">
+              <div class="imagenDestacado">
+                <a href="Ocio/Juegos/Puzzles/TheWitness.html">
+                  <div class="numeroDestacado">1</div>
+                  <img id="GetSizeImage" src="Recursos/Img/thewitness.jpg" alt="thewitness" />
+                </a>
+              </div>
             </li>
-            <li style="padding: 2px"></li>
-            <li class="perfil">
-              <a href="/Register.html"> Registrarse </a>
+            <li class="lineaB">
+              <div class="imagenDestacado">
+                <a href="Ocio/Juegos/Puzzles/Portal_2.html">
+                  <div class="numeroDestacado">2</div>
+                  <img src="Recursos/Img/portal_2.jpg" alt="portal_2" />
+                </a>
+              </div>
+            </li>
+            <li style="display: inline-block; margin-right: 5px">
+              <div class="imagenDestacado">
+                <a href="Ocio/Juegos/Puzzles/Portal">
+                  <div class="numeroDestacado">3</div>
+                  <img src="Recursos/Img/portal.jpg" alt="portal" />
+                </a>
+              </div>
             </li>
           </ul>
-        </div>
-
-        <!-- Boton Abrir Barra pegable -->
-        <nav id="OpenSidebar">
-          <button
-            class="interactivo boton"
-            onclick="AbrirSideBar()"
-            id="barras"
-          >
-            ☰</button
-          ><br />
-        </nav>
-
-        <!--Boton Cerrar barra pegable-->
-        <div class="index" id="Sidebar">
-          <button class="interactivo boton" onclick="CerrarSideBar()">
-            Cerrar ×
-          </button>
-
-          <!--Boton Home-->
-          <button class="boton">Home</button>
-
-          <!--Boton Ocio con accordion-->
-          <button class="accordion">
-            <div class="accordionMn"><span>Ocio</span></div>
-            <!-- <div style="padding: 1px;"></div> -->
-            <div class="submenus accordion-focus:submenus">
-              <a class="interactivo submenusA" href="Ocio/Juegos.html"
-                >Juegos</a
-              >
-              <a class="interactivo2 submenusA" href="Ocio/Libros.html"
-                >Libros</a
-              >
-              <a class="interactivo2 submenusA" href="Ocio/Series.html"
-                >Series</a
-              >
-              <a class="interactivo2 submenusA" href="Ocio/Peliculas.html"
-                >Peliculas
-              </a>
-            </div>
-          </button>
-
-          <!--Boton Viajes con accordion-->
-          <button class="accordion">
-            <div class="accordionMn"><span>Viajes</span></div>
-            <div class="submenus accordion-focus:submenus">
-              <a class="interactivo2 submenusA" href="Viajes/Hoteles.html">
-                Hoteles
-              </a>
-              <a class="interactivo2 submenusA" href="Viajes/Patrimonios.html">
-                Patrimonios culturales
-              </a>
-            </div>
-          </button>
         </div>
       </div>
     </div>
-
-    <!--Texto -->
-    <main id="Main">
-      <div class="linea">
-        <div class="lineal textocentrado">
-          <p>Tutorial</p>
-          <a class="tutorialImagen" href="Tutorial.html">
-            <img
-              style="margin-top: 10px"
-              alt="Tutorial"
-              src="/Recursos/Img/tutorial.png"
-            />
-          </a>
-        </div>
-        <div class="espacio"></div>
-        <div>
-          <p class="textoDestacado">Destacados</p>
-          <div class="imagenDestacadoLinea">
-            <!-- Reviews destacadas -->
-            <ul style="list-style: none; white-space: nowrap; padding: 0%">
-              <li class="lineaB">
-                <div class="imagenDestacado">
-                  <a href="Ocio/Juegos/Puzzles/TheWitness.html">
-                    <div class="numeroDestacado">1</div>
-                    <img src="Recursos/Img/thewitness.jpg" alt="thewitness" />
-                  </a>
-                </div>
-              </li>
-              <li class="lineaB">
-                <div class="imagenDestacado">
-                  <a href="Ocio/Juegos/Puzzles/Portal_2.html">
-                    <div class="numeroDestacado">2</div>
-                    <img src="Recursos/Img/portal_2.jpg" alt="portal_2" />
-                  </a>
-                </div>
-              </li>
-              <li style="display: inline-block; margin-right: 5px">
-                <div class="imagenDestacado">
-                  <a href="Ocio/Juegos/Puzzles/Portal">
-                    <div class="numeroDestacado">3</div>
-                    <img src="Recursos/Img/portal.jpg" alt="portal" />
-                  </a>
-                </div>
-              </li>
-            </ul>
-          </div>
-        </div>
+    <!-- Juegos -->
+    <div class="block">
+      <p class="textoLista">Juegos</p>
+      <div class="imagenDestacadoLinea">
+        <ul class="lineaimagenes">
+          <!-- boton para mover las imagenes de juegos a la izquierda -->
+          <button class="SliceI" onclick="moverImagenesJuegoIzquierda()">
+            <i class="fas fa-chevron-left"></i>
+          </button>
+          <!-- Los juegos -->
+          <li class="lineaB">
+            <div class="imagenDestacado imagenSliceJuego">
+                <img class="imagesearch" src="Recursos/Img/thewitness.jpg" alt="thewitness" name="thewitness" />
+            </div>
+          </li>
+          <li class="lineaB">
+            <div class="imagenDestacado imagenSliceJuego margenpx">
+              <a href="Ocio/Juegos/Puzzles/#">
+                <img class="imagesearch" src="Recursos/Img/battleblock_theater.jpg" alt="battleblock_theater" name="battleblock_theater" />
+              </a>
+            </div>
+          </li>
+          <li class="lineaB">
+            <div class="imagenDestacado imagenSliceJuego">
+              <img class="imagesearch" src="Recursos/Img/portal.jpg" alt="portal" name="portal" />
+            </div>
+          </li>
+          <li class="lineaB">
+            <div class="imagenDestacado imagenSliceJuego">
+              <img class="imagesearch" src="Recursos/Img/portal_2.jpg" alt="portal_2" name="portal_2"/>
+            </div>
+          </li>
+          <li class="lineaB">
+            <div class="imagenDestacado imagenSliceJuego">
+              <img class="imagesearch" src="Recursos/Img/littlenightmare.jpg" alt="littlenightmare" name="interrogacion"  />
+            </div>
+          </li>
+          <li class="lineaB">
+            <div class="imagenDestacado imagenSliceJuego">
+              <img class="imagesearch" src="Recursos/Img/interrogacion.png" alt="interrogacion" name="interrogacion" />
+            </div>
+          </li>
+          <li class="lineaB">
+            <div class="imagenDestacado imagenSliceJuego">
+              <img class="imagesearch" src="Recursos/Img/interrogacion.png" alt="interrogacion" name="interrogacion"/>
+            </div>
+          </li>
+          <li class="lineaB">
+            <div class="imagenDestacado imagenSliceJuego">
+              <img class="imagesearch" src="Recursos/Img/interrogacion.png" alt="interrogacion" name="interrogacion"/>
+            </div>
+          </li>
+          <!-- boton para mover las imagenes de juegos a la derecha -->
+          <button class="SliceD" onclick="moverImagenesJuegoDerecha()">
+            <i class="fas fa-chevron-right"></i>
+          </button>
+        </ul>
       </div>
-      <!-- Juegos -->
-      <div class="block" ;>
-        <p class="textoLista">Juegos</p>
-        <div class="imagenDestacadoLinea">
-          <ul class="lineaimagenes">
-            <!-- boton para mover las imagenes de juegos a la izquierda -->
-            <button
-              class="Slice"
-              style="margin-right: 4px"
-              onclick="moverImagenesJuegoIzquierda()"
-            >
-              <i class="fas fa-chevron-left"></i>
-            </button>
-            <!-- Los juegos -->
-            <li class="lineaB">
-              <div class="imagenDestacado imagenSliceJuego">
-                <a href="Ocio/Juegos/Puzzles/TheWitness.html">
-                  <img src="Recursos/Img/thewitness.jpg" alt="thewitness" />
-                </a>
-              </div>
-            </li>
-            <li class="lineaB">
-              <div class="imagenDestacado imagenSliceJuego margenpx">
-                <a href="Ocio/Juegos/Puzzles/#">
-                  <img
-                    src="Recursos/Img/battleblock_theater.jpg"
-                    alt="battleblock_theater"
-                  />
-                </a>
-              </div>
-            </li>
-            <li class="lineaB">
-              <div class="imagenDestacado imagenSliceJuego">
-                <img src="Recursos/Img/ponyisland.jpg" />
-              </div>
-            </li>
-            <li class="lineaB">
-              <div class="imagenDestacado imagenSliceJuego">
-                <img src="Recursos/Img/portal.jpg" />
-              </div>
-            </li>
-            <li class="lineaB">
-              <div class="imagenDestacado imagenSliceJuego">
-                <img src="Recursos/Img/portal_2.jpg" />
-              </div>
-            </li>
-            <li class="lineaB">
-              <div class="imagenDestacado imagenSliceJuego">
-                <img src="Recursos/Img/littlenightmare.jpg" />
-              </div>
-            </li>
-            <li class="lineaB">
-              <div class="imagenDestacado imagenSliceJuego">
-                <img src="Recursos/Img/interrogacion.png" />
-              </div>
-            </li>
-            <li class="lineaB">
-              <div class="imagenDestacado imagenSliceJuego">
-                <img src="Recursos/Img/interrogacion.png" />
-              </div>
-            </li>
-            <!-- boton para mover las imagenes de juegos a la derecha -->
-            <button
-              class="Slice"
-              style="margin-left: auto; margin-right: 10px"
-              onclick="moverImagenesJuegoDerecha()"
-            >
-              <i class="fas fa-chevron-right"></i>
-            </button>
-          </ul>
-        </div>
+    </div>
+    <!-- Libros -->
+    <div class="block">
+      <p class="textoLista">Libros</p>
+      <div class="imagenDestacadoLinea">
+        <ul class="lineaimagenes">
+          <!-- boton para mover las imagenes de Libros a la izquierda -->
+          <button class="SliceI" onclick="moverImagenesLibroIzquierda()">
+            <i class="fas fa-chevron-left"></i>
+          </button>
+          <!-- Lista de Libros-->
+          <li class="lineaB">
+            <div class="imagenDestacado imagenSliceLibro">
+              <img class="imagesearch" src="Recursos/Img/interrogacion.png" alt="interrogacion" name="interrogacion"/>
+            </div>
+          </li>
+          <li class="lineaB">
+            <div class="imagenDestacado imagenSliceLibro">
+              <img class="imagesearch" src="Recursos/Img/interrogacion.png" alt="interrogacion" name="interrogacion"/>
+            </div>
+          </li>
+          <li class="lineaB">
+            <div class="imagenDestacado imagenSliceLibro">
+              <img class="imagesearch" src="Recursos/Img/interrogacion.png" alt="interrogacion" name="interrogacion" />
+            </div>
+          </li>
+          <li class="lineaB">
+            <div class="imagenDestacado imagenSliceLibro">
+              <img class="imagesearch" src="Recursos/Img/interrogacion.png" alt="interrogacion" name="interrogacion"/>
+            </div>
+          </li>
+          <li class="lineaB">
+            <div class="imagenDestacado imagenSliceLibro">
+              <img class="imagesearch" src="Recursos/Img/thewitness.jpg" alt="interrogacion"name="interrogacion" />
+            </div>
+          </li>
+          <li class="lineaB">
+            <div class="imagenDestacado imagenSliceLibro">
+              <img class="imagesearch" src="Recursos/Img/interrogacion.png" alt="interrogacion" name="interrogacion"/>
+            </div>
+          </li>
+          <li class="lineaB">
+            <div class="imagenDestacado imagenSliceLibro">
+              <img class="imagesearch" src="Recursos/Img/interrogacion.png" alt="interrogacion" name="interrogacion"/>
+            </div>
+          </li>
+          <li class="lineaB">
+            <div class="imagenDestacado imagenSliceLibro">
+              <img class="imagesearch" src="Recursos/Img/interrogacion.png" alt="interrogacion" name="interrogacion"/>
+            </div>
+          </li>
+          <!-- boton para mover las imagenes de Libro a la derecha-->
+          <button class="SliceD" onclick="moverImagenesLibroDerecha()">
+            <i class="fas fa-chevron-right"></i>
+          </button>
+        </ul>
       </div>
-      <!-- Libros -->
-      <div class="block">
-        <p class="textoLista">Libros</p>
-        <div class="imagenDestacadoLinea">
-          <ul class="lineaimagenes">
-            <!-- boton para mover las imagenes de Libros a la izquierda -->
-            <button
-              class="Slice"
-              style="margin-right: 6px"
-              onclick="moverImagenesLibroIzquierda()"
-            >
-              <i class="fas fa-chevron-left"></i>
-            </button>
-            <!-- Lista de Libros-->
-            <li class="lineaB">
-              <div class="imagenDestacado imagenSliceLibro">
-                <img src="Recursos/Img/interrogacion.png" alt="arcane" />
-              </div>
-            </li>
-            <li class="lineaB">
-              <!-- <div class="imagenDestacado imagenSliceLibro"> -->
-              <img src="Recursos/Img/interrogacion.png" alt="interrogacion" />
-              <!-- </div> -->
-            </li>
-            <li class="lineaB">
-              <div class="imagenDestacado imagenSliceLibro">
-                <img src="Recursos/Img/interrogacion.png" />
-              </div>
-            </li>
-            <li class="lineaB">
-              <div class="imagenDestacado imagenSliceLibro">
-                <img src="Recursos/Img/interrogacion.png" />
-              </div>
-            </li>
-            <li class="lineaB">
-              <div class="imagenDestacado imagenSliceLibro">
-                <img src="Recursos/Img/thewitness.jpg" />
-              </div>
-            </li>
-            <li class="lineaB">
-              <div class="imagenDestacado imagenSliceLibro">
-                <img src="Recursos/Img/interrogacion.png" />
-              </div>
-            </li>
-            <li class="lineaB">
-              <div class="imagenDestacado imagenSliceLibro">
-                <img src="Recursos/Img/interrogacion.png" />
-              </div>
-            </li>
-            <li class="lineaB">
-              <div class="imagenDestacado imagenSliceLibro">
-                <img src="Recursos/Img/interrogacion.png" />
-              </div>
-            </li>
-            <!-- boton para mover las imagenes de Libro a la derecha-->
-            <button
-              class="Slice"
-              style="margin-left: auto; margin-right: 10px"
-              onclick="moverImagenesLibroDerecha()"
-            >
-              <i class="fas fa-chevron-right"></i>
-            </button>
-          </ul>
-        </div>
+    </div>
+    <!-- Series -->
+    <div class="block">
+      <p class="textoLista">Series</p>
+      <div class="imagenDestacadoLinea">
+        <ul class="lineaimagenes">
+          <!-- boton para mover las imagenes de Serie a la izquierda -->
+          <button class="SliceI" onclick="moverImagenesSerieIzquierda()">
+            <i class="fas fa-chevron-left"></i>
+          </button>
+          <!-- Lista de series-->
+          <li class="lineabloque">
+            <div class="imagenDestacado imagenSliceSerie">
+              <img class="imagesearch" src="Recursos/Img/arcane.png" alt="arcane" name="interrogacion"/>
+            </div>
+          </li>
+          <li class="lineaB">
+            <div class="imagenDestacado imagenSliceSerie">
+              <img class="imagesearch" src="Recursos/Img/casa_de_papel.png" alt="interrogacion" name="interrogacion"/>
+            </div>
+          </li>
+          <li class="lineaB">
+            <div class="imagenDestacado imagenSliceSerie">
+              <img class="imagesearch" src="Recursos/Img/interrogacion.png" alt="interrogacion" name="interrogacion"/>
+            </div>
+          </li>
+          <li class="lineaB">
+            <div class="imagenDestacado imagenSliceSerie">
+              <img class="imagesearch" src="Recursos/Img/interrogacion.png" alt="interrogacion" name="interrogacion"/>
+            </div>
+          </li>
+          <li class="lineaB">
+            <div class="imagenDestacado imagenSliceSerie">
+              <img class="imagesearch" src="Recursos/Img/thewitness.jpg" alt="interrogacion" name="interrogacion"/>
+            </div>
+          </li>
+          <li class="lineaB">
+            <div class="imagenDestacado imagenSliceSerie">
+              <img class="imagesearch" src="Recursos/Img/interrogacion.png" alt="interrogacion" name="interrogacion"/>
+            </div>
+          </li>
+          <li class="lineaB">
+            <div class="imagenDestacado imagenSliceSerie">
+              <img class="imagesearch" src="Recursos/Img/interrogacion.png" alt="interrogacion" name="interrogacion"/>
+            </div>
+          </li>
+          <li class="lineaB">
+            <div class="imagenDestacado imagenSliceSerie">
+              <img class="imagesearch" src="Recursos/Img/interrogacion.png" alt="interrogacion" name="interrogacion"/>
+            </div>
+          </li>
+          <!-- boton para mover las imagenes de Serie a la derecha-->
+          <button class="SliceD" onclick="moverImagenesSerieDerecha()">
+            <i class="fas fa-chevron-right"></i>
+          </button>
+        </ul>
       </div>
-      <!-- Series -->
-      <div class="block">
-        <p class="textoLista">Series</p>
-        <div class="imagenDestacadoLinea">
-          <ul class="lineaimagenes">
-            <!-- boton para mover las imagenes de Serie a la izquierda -->
-            <button
-              class="Slice"
-              style="margin-right: 6px"
-              onclick="moverImagenesSerieIzquierda()"
-            >
-              <i class="fas fa-chevron-left"></i>
-            </button>
-            <!-- Lista de series-->
-            <li class="lineabloque">
-              <div class="imagenDestacado imagenSliceSerie">
-                <img src="Recursos/Img/arcane.png" alt="arcane" />
-              </div>
-            </li>
-            <li class="lineaB">
-              <div class="imagenDestacado imagenSliceSerie">
-                <img src="Recursos/Img/casa de papel.png" alt="interrogacion" />
-              </div>
-            </li>
-            <li class="lineaB">
-              <div class="imagenDestacado imagenSliceSerie">
-                <img src="Recursos/Img/interrogacion.png" />
-              </div>
-            </li>
-            <li class="lineaB">
-              <div class="imagenDestacado imagenSliceSerie">
-                <img src="Recursos/Img/interrogacion.png" />
-              </div>
-            </li>
-            <li class="lineaB">
-              <div class="imagenDestacado imagenSliceSerie">
-                <img src="Recursos/Img/thewitness.jpg" />
-              </div>
-            </li>
-            <li class="lineaB">
-              <div class="imagenDestacado imagenSliceSerie">
-                <img src="Recursos/Img/interrogacion.png" />
-              </div>
-            </li>
-            <li class="lineaB">
-              <div class="imagenDestacado imagenSliceSerie">
-                <img src="Recursos/Img/interrogacion.png" />
-              </div>
-            </li>
-            <li class="lineaB">
-              <div class="imagenDestacado imagenSliceSerie">
-                <img src="Recursos/Img/interrogacion.png" />
-              </div>
-            </li>
-            <!-- boton para mover las imagenes de Serie a la derecha-->
-            <button
-              class="Slice"
-              style="margin-left: auto; margin-right: 10px"
-              onclick="moverImagenesSerieDerecha()"
-            >
-              <i class="fas fa-chevron-right"></i>
-            </button>
-          </ul>
-        </div>
-      </div>
-      <!-- Pelicula -->
-      <div class="block">
+    </div>
+    <!-- Pelicula -->
+    <!-- <div class="block">
         <p class="textoLista">Peliculas</p>
         <div class="imagenDestacadoLinea">
-          <ul class="lineaimagenes">
-            <!-- boton para mover las imagenes de peliculas a la izquierda -->
-            <button
+          <ul class="lineaimagenes"> -->
+    <!-- boton para mover las imagenes de peliculas a la izquierda -->
+    <!-- <button
               class="Slice"
               style="margin-right: 6px"
               onclick="moverImagenesLibroIzquierda()"
             >
               <i class="fas fa-chevron-left"></i>
-            </button>
-            <!-- Lista de peliculas-->
-            <li class="lineaB">
-              <!-- <div class="imagenDestacado imagenSlicePelicula"> -->
+            </button> -->
+    <!-- Lista de peliculas-->
+    <!-- <li class="lineaB">
+              <div class="imagenDestacado imagenSlicePelicula">
               <img src="Recursos/Img/interrogacion.png" />
-              <!-- </div> -->
-            </li>
-            <li class="lineaB">
-              <div class="imagenDestacado imagenSlicePelicula">
-                <img src="Recursos/Img/interrogacion.png" />
               </div>
             </li>
             <li class="lineaB">
@@ -426,23 +370,28 @@
                 <img src="Recursos/Img/interrogacion.png" />
               </div>
             </li>
-            <!-- boton para mover las imagenes de pelicula a la derecha-->
-            <button
+            <li class="lineaB">
+              <div class="imagenDestacado imagenSlicePelicula">
+                <img src="Recursos/Img/interrogacion.png" />
+              </div>
+            </li> -->
+    <!-- boton para mover las imagenes de pelicula a la derecha-->
+    <!-- <button
               class="Slice"
               style="margin-left: auto; margin-right: 10px"
               onclick="moverImagenesLibroDerecha()"
             >
               <i class="fas fa-chevron-right"></i>
-            </button>
-          </ul>
+            </button> -->
+    <!-- </ul>
         </div>
-      </div>
-      <!-- Hoteles
+      </div> -->
+    <!-- Hoteles
       <div class="block">
         <p class="textoLista">Libros</p>
         <div class="imagenDestacadoLinea">
           <ul class="lineaimagenes">
-            <!-- boton para mover las imagenes de Libros a la izquierda 
+             boton para mover las imagenes de Libros a la izquierda 
             <button
               class=""
               style="margin-right: 6px"
@@ -450,7 +399,7 @@
             >
               <i class="fas fa-chevron-left"></i>
             </button>
-            <!-- Lista de Libros
+             Lista de Libros
             <li class="lineabloque">
               <div class="imagenDestacado imagenSliceLibro">
                 <img src="Recursos/Img/arcane.png" alt="arcane" />
@@ -491,7 +440,7 @@
                 <img src="Recursos/Img/interrogacion.png" />
               </div>
             </li>
-            <!-- boton para mover las imagenes de Libro a la derecha
+             boton para mover las imagenes de Libro a la derecha
             <button
               style="margin-left: auto; margin-right: 10px"
               onclick="moverImagenesLibroDerecha()"
@@ -501,21 +450,21 @@
           </ul>
         </div>
       </div>
-      <!-- Libros 
+       Libros 
       <div class="block">
         <p class="textoLista">Libros</p>
         <div class="imagenDestacadoLinea">
-          <ul class="lineaimagenes">
-            <!-- boton para mover las imagenes de Libros a la izquierda 
-            <button
+          <ul class="lineaimagenes"> -->
+    <!-- boton para mover las imagenes de Libros a la izquierda -->
+    <!--<button
               class=""
               style="margin-right: 6px"
               onclick="moverImagenesLibroIzquierda()"
             >
              <i class="fas fa-chevron-left"></i>
-            </button>
-            <!-- Lista de Libros
-            <li class="lineabloque">
+            </button> -->
+    <!-- Lista de Libros -->
+    <!-- <li class="lineabloque">
               <div class="imagenDestacado imagenSliceLibro">
                 <img src="Recursos/Img/arcane.png" alt="arcane" />
               </div>
@@ -554,8 +503,8 @@
               <div class="imagenDestacado imagenSliceLibro">
                 <img src="Recursos/Img/interrogacion.png" />
               </div>
-            </li>
-            <!-- boton para mover las imagenes de Libro a la derecha
+            </li> -->
+    <!-- boton para mover las imagenes de Libro a la derecha
             <button
               style="margin-left: auto; margin-right: 10px"
               onclick="moverImagenesLibroDerecha()"
@@ -565,18 +514,18 @@
           </ul>
         </div>
       </div> -->
-    </main>
-    <!--Scripts-->
-    <script
-      src="https://kit.fontawesome.com/4ba71b72f6.js"
-      crossorigin="anonymous"
-    ></script>
-    <script src="Recursos/Js/SideBar.js"></script>
-    <script src="Recursos/Js/Perfilbar.js"></script>
-    <script src="Recursos/Js/flickity.pkgd.js"></script>
-    <script src="Recursos/Js/Img.js"></script>
-    <script src="Recursos/Js/ImgSliceindexJuego.js"></script>
-    <script src="Recursos/Js/ImgSliceindexSerie.js"></script>
-    <!-- <script src='Recursos/Js/juego.js'></script> -->
-  </body>
+  </main>
+  <!--Scripts-->
+  <script src="https://kit.fontawesome.com/4ba71b72f6.js" crossorigin="anonymous"></script>
+  <script src="Recursos/Js/Size.js"></script>
+  <script src="Recursos/Js/Search.js"></script>
+  <script src="Recursos/Js/SideBar.js"></script>
+  <script src="Recursos/Js/LoginModal.js"></script>
+  <script src="Recursos/Js/Perfilbar.js"></script>
+  <script src="Recursos/Js/Img.js"></script>
+  <script src="Recursos/Js/ImgSliceindexJuego.js"></script>
+  <script src="Recursos/Js/ImgSliceindexLibro.js"></script>
+  <script src="Recursos/Js/ImgSliceindexSerie.js"></script>
+</body>
+
 </html>

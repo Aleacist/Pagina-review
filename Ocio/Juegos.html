@@ -1,134 +1,235 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
     <!--Cargas-->
-    <link rel="stylesheet" type="text/css" href="../Recursos/Css/Estilo.css">
+    <link rel="stylesheet" type="text/css" href="../Recursos/Css/SideMenu.css" />
+    <link rel="stylesheet" type="text/css" href="../Recursos/Css/Estilo.css" />
+    <link rel="stylesheet" type="text/css" href="../Recursos/Css/Header.css" />
+    <link rel="stylesheet" type="text/css" href="../Recursos/Css/Index.css" />
+    <link rel="stylesheet" type="text/css" href="../Recursos/Css/Tablas.css" />
     <link rel="icon" type="image/x-icon" href="../Recursos/Img/favicon.ico">
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500&display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet" />
 
 
-    <!--Titulo-->  
+    <!--Titulo-->
     <title>Juegos</title>
 </head>
 
 
 <body>
-    <!--Scripts-->
-    <script src="../Recursos/Js/SideBar.js"></script>
- 
-    
-    <!--encabezado-->  
+
+    <!-- encabezado-->
     <div class="sticky">
         <header>
-            <img src="../Recursos/Img/Pajaro.png" alt="imagenheader" class="imagenheader">
-            <h1 class="textheader">  MY REVIEW</h1>
-            <input class="buscarheader" type="text" placeholder="  Buscar">
-            <a href="../Login.html"><img src="../Recursos/Img/icono.png" alt="imagenlogin" class="imagenlogin"></a>
+            <img src="../Recursos/Img/Pajaro.png" alt="imagenheader" class="imagenheader" />
+            <h1 class="textheader">MY REVIEW</h1>
+            <input id="myInput" onkeyup="myFunction()" class="buscarheader" type="text" placeholder="  Buscar" />
+            <button style="background-color: transparent; border: none" onclick="AbrirPerfil()">
+                <img src="../Recursos/Img/icono.png" alt="imagenlogin" class="imagenlogin" />
+            </button>
         </header>
-    </div> 
 
-
-<!-- Boton Abrir Barra pegable -->
-    <nav id="OpenSidebar">
-        <button class="interactivo boton" onclick="AbrirSideBar();" id="barras">☰</button>
-    </nav>
-
-
-<!--Boton Cerrar barra pegable-->
-<div class="index" id="Sidebar" >
-    <button class="interactivo boton"onclick="CerrarSideBar();">Cerrar &times;</button>
-
-
-<!--Boton Home-->
-    <a href="../index.html"><button class="interactivo boton" >Home</button></a>
-
-
-<!--Boton Ocio con accordion-->
-        <button class="accordion">   
-            <div class="accordionMn"><span >Ocio</span></div>
-            <div style="padding: 1px;"></div>
-        <div class="submenus accordion-focus:submenus">
-            <a class="submenusA" href="#">Juegos</a>
-            <a class="interactivo2  submenusA" href="Libros.html">Libros</a>
-            <a class="interactivo2  submenusA" href="Series.html">Series</a>
-            <a class="interactivo2  submenusA" href="Peliculas.html">Peliculas</a>
-        </div>
-    </button>
-
-<!--Boton Viajes con accordion-->
-    <button class="accordion"> 
-        <div class="accordionMn"><span>Viajes</span ></div>
-        <div class="submenus accordion-focus:submenus">
-            <a class="interactivo2  submenusA" href="../Viajes/Hoteles.html">Hoteles</a>
-            <a class="interactivo2  submenusA" href="../Viajes/Patrimonios.html">Patrimonios culturales</a>
-        </div>
-    </button>
-
-</div>
-
-<!--Texto -->
-<main id="Main">
-    <div style="flex-wrap: nowrap;flex-grow:1;">
-    <div ><p class="textoDestacado">Destacados</p>
-        <div class="imagenDestacadoLinea">
-            <div class="imagenDestacado">
-                <img src="../Recursos/Img/thewitness.jpeg">
+        <div class="flex">
+            <div class="perfil" id="PerfilAnimacion">
+                <ul class="perfil" id="Perfil">
+                    <li class="perfil">
+                        <a onclick="AbrirModal()" href="#">Iniciar sesion</a>
+                    </li>
+                    <li style="padding: 2px"></li>
+                    <li class="perfil">
+                        <a href="../Register.html"> Registrarse </a>
+                    </li>
+                </ul>
             </div>
-            <div class="imagenDestacado ">
-                <img src="../Recursos/Img/interrogacion.png">
-            </div>
-            <div class="imagenDestacado">
-                <img src="../Recursos/Img/interrogacion.png">
-            </div>
-            <!-- <div class="imagenDestacado">
-                <img src="../Recursos/Img/interrogacion.png">
-            </div>
-            <div class="imagenDestacado">
-                <img src="../Recursos/Img/interrogacion.png">
-            </div>
-            <div class="imagenDestacado">
-                <img src="../Recursos/Img/interrogacion.png">
-            </div>
-            <div class="imagenDestacado">
-                <img src="../Recursos/Img/interrogacion.png">
-            </div> -->
-            <div class="imagenDestacado">
-                <img src="../Recursos/Img/interrogacion.png">
-            </div>
-            <div class="imagenDestacado">
-                <img src="../Recursos/Img/interrogacion.png">
-            </div>
-            <div class="imagenDestacado">
-                <img src="../Recursos/Img/interrogacion.png">
-            </div>
-            <div class="imagenDestacado">
-                <img src="../Recursos/Img/interrogacion.png">
-            </div>
-            <div class="imagenDestacado">
-                <img src="../Recursos/Img/interrogacion.png">
-            </div>
-            <div class="imagenDestacado">
-                <img src="../Recursos/Img/interrogacion.png">
-            </div>
-            <div class="imagenDestacado">
-                <img src="../Recursos/Img/thewitness.jpeg">
-            </div>
-        </div>
-        <div ><p class="textoDestacado">Puzzle</p>
-            <div class="imagenDestacadoLinea">
-                <div class="imagenDestacado">
-                    <img src="../Recursos/Img/thewitness.jpeg">
+            <div class="modal" id="modal">
+                <div class="modal-content">
+                    <form onsubmit="comprobar()">
+                        <fieldset class="formularioRegistrarse">
+                            <legend>Datos Usuario</legend>
+                            <label style="font-size: 25px"> Usuario:</label><br />
+                            <input name="Usuario" id="Nombre" type="text" required /><br />
+                            <label style="font-size: 25px">Contraseña:</label><br />
+                            <input name="Pass" id="Contraseña" type="password" required />
+                            <div id="Resultado"></div>
+                            <br />
+                            <input type="submit" />
+                        </fieldset>
+                    </form>
                 </div>
-
             </div>
+
+            <!-- Boton Abrir Barra pegable -->
+            <nav id="OpenSidebar">
+                <button class="interactivo boton" onclick="AbrirSideBar()" id="barras">
+                    ☰</button><br />
+            </nav>
+
+            <!--Boton Cerrar barra pegable-->
+            <div class="index" id="Sidebar">
+                <button class="interactivo boton" onclick="CerrarSideBar()">
+                    Cerrar ×
+                </button>
+
+                <!--Boton Home-->
+                <a href="../index.html"><button class="interactivo boton">Home</button></a>
+
+                <!--Boton Ocio con accordion-->
+                <button class="accordion">
+                    <div class="accordionMn"><span>Ocio</span></div>
+                    <!-- <div style="padding: 1px;"></div> -->
+                    <div class="submenus accordion-focus:submenus">
+                        <a class="submenusA">Juegos</a>
+                        <a class="interactivo2 submenusA" href="Libros.html">Libros</a>
+                        <a class="interactivo2 submenusA" href="Series.html">Series</a>
+                        <a class="interactivo2 submenusA" href="Peliculas.html">Peliculas
+                        </a>
+                    </div>
+                </button>
+
+                <!--Boton Viajes con accordion-->
+                <button class="accordion">
+                    <div class="accordionMn"><span>Viajes</span></div>
+                    <div class="submenus accordion-focus:submenus">
+                        <a class="interactivo2 submenusA" href="../Viajes/Hoteles.html">
+                            Hoteles
+                        </a>
+                        <a class="interactivo2 submenusA" href="../Viajes/Patrimonios.html">
+                            Patrimonios culturales
+                        </a>
+                    </div>
+                </button>
+            </div>
+        </div>
     </div>
-</div>
-</main>
 
+    <!--Texto -->
+    <main id="Main">
+        <!-- Juegos -->
+        <div class="block" ;>
+            <p class="textoLista">Juegos</p>
+            <div class="imagenDestacadoLinea">
+                <ul class="lineaimagenes">
+                    <!-- boton para mover las imagenes de juegos a la izquierda -->
+                    <button class="SliceI"  onclick="moverImagenesJuegoIzquierda()">
+                        <i class="fas fa-chevron-left"></i>
+                    </button>
+                    <!-- Los juegos -->
+                    <li class="lineaB">
+                        <div class="imagenDestacado imagenSliceJuego">
+                            <a href="Ocio/Juegos/Puzzles/TheWitness.html">
+                                <img src="../Recursos/Img/thewitness.jpg" alt="thewitness" />
+                            </a>
+                        </div>
+                    </li>
+                    <li class="lineaB">
+                        <div class="imagenDestacado imagenSliceJuego margenpx">
+                            <a href="Ocio/Juegos/Puzzles/#">
+                                <img src="../Recursos/Img/battleblock_theater.jpg" alt="battleblock_theater" />
+                            </a>
+                        </div>
+                    </li>
+                    <li class="lineaB">
+                        <div class="imagenDestacado imagenSliceJuego">
+                            <img src="../Recursos/Img/portal.jpg" />
+                        </div>
+                    </li>
+                    <li class="lineaB">
+                        <div class="imagenDestacado imagenSliceJuego">
+                            <img src="../Recursos/Img/portal_2.jpg" />
+                        </div>
+                    </li>
+                    <li class="lineaB">
+                        <div class="imagenDestacado imagenSliceJuego">
+                            <img src="../Recursos/Img/littlenightmare.jpg" />
+                        </div>
+                    </li>
+                    <li class="lineaB">
+                        <div class="imagenDestacado imagenSliceJuego">
+                            <img src="../Recursos/Img/interrogacion.png" />
+                        </div>
+                    </li>
+                    <li class="lineaB">
+                        <div class="imagenDestacado imagenSliceJuego">
+                            <img src="../Recursos/Img/interrogacion.png" />
+                        </div>
+                    </li>
+                    <li class="lineaB">
+                        <div class="imagenDestacado imagenSliceJuego">
+                            <img src="../Recursos/Img/interrogacion.png" />
+                        </div>
+                    </li>
+                    <!-- boton para mover las imagenes de juegos a la derecha -->
+                    <button class="SliceD"
+                        onclick="moverImagenesJuegoDerecha()">
+                        <i class="fas fa-chevron-right"></i>
+                    </button>
+                </ul>
+            </div>
+        </div>
 
+        <table>
+            <br>
+            <caption>Analisis de Juegos</caption>
+            <thead>
+                <tr>
+                    <th rowspan="5" scope="col">Juegos</th>
+                    <th colspan="4" scope="col">Puntuaje</th>
+                </tr>
+                <tr>
+                    <th>Graficos</th>
+                    <th>Jugabilidad</th>
+                    <th>Banda sonora</th>
+                    <th>Precio</th>
+                </tr>
+            </thead>
+            <tbody style="text-align: center;">
+                <tr>
+                    <th><img src="../Recursos/Img/thewitness.jpg"></th>
+                    <td>9</td>
+                    <td>7</td>
+                    <td>8</td>
+                    <td>30</td>
+                </tr>
+                <tr>
+                    <th><img src="../Recursos/Img/battleblock_theater.jpg"></th>
+                    <td>7</td>
+                    <td>9</td>
+                    <td>8</td>
+                    <td>10</td>
+                </tr>
+                <tr>
+                    <th><img src="../Recursos/Img/portal.jpg"></th>
+                    <td>7</td>
+                    <td>8</td>
+                    <td>7</td>
+                    <td>2</td>
+                </tr>
+                <tr>
+                    <th><img src="../Recursos/Img/portal_2.jpg"></th>
+                    <td>9</td>
+                    <td>9</td>
+                    <td>9</td>
+                    <td>5</td>
+                </tr>
+            </tbody>
+        </table>
+
+    </main>
+    <script src="https://kit.fontawesome.com/4ba71b72f6.js" crossorigin="anonymous"></script>
+    <script src="../Recursos/Js/Size.js"></script>
+    <script src="../Recursos/Js/SideBar.js"></script>
+    <script src="../Recursos/Js/LoginModal.js"></script>
+    <script src="../Recursos/Js/Perfilbar.js"></script>
+    <script src="../Recursos/Js/Img.js"></script>
+    <script src="../Recursos/Js/ImgSliceindexJuego.js"></script>
 </body>
 
 </html>

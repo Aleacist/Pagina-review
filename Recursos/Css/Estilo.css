@@ -13,6 +13,7 @@
 
 body {
   font-family: sans-serif;
+  height: 100vh;
 }
 
 header {
@@ -44,8 +45,9 @@ main {
 
 img {
   height: 125px;
-  max-width: 220px;
+  width: 220px;
   object-fit: cover;
+  opacity: inherit;
 }
 
 /*Pasar cursor por arriba*/

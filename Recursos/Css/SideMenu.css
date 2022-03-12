@@ -39,7 +39,6 @@ nav:hover {
   cursor: pointer;
   padding: 0;
   background: none;
-  font: inherit;
   outline: inherit;
 }
 .accordionMn {

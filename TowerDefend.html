@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!--Cargas-->
+  <link rel="stylesheet" type="text/css" href="Recursos/Css/SideMenu.css" />
+  <link rel="stylesheet" type="text/css" href="Recursos/Css/Estilo.css" />
+  <link rel="stylesheet" type="text/css" href="Recursos/Css/Header.css" />
+  <link rel="stylesheet" type="text/css" href="Recursos/Css/Index.css" />
+  <link rel="stylesheet" type="text/css" href="Recursos/Css/TowerDefend.css" />
+  <link rel="icon" type="image/x-icon" href="Recursos/Img/favicon.ico">
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet" />
+
+  <!--Titulo-->
+  <title>My review</title>
+</head>
+
+<body>
+  <!-- encabezado-->
+  <div class="sticky">
+    <nav id="OpenSidebar">
+      <button class="interactivo boton" onclick="AbrirSideBar()" id="barras">
+        ☰</button><br />
+    </nav>
+
+    <!--Boton Cerrar barra pegable-->
+    <div class="index" id="Sidebar">
+      <button class="interactivo boton" onclick="CerrarSideBar()">
+        Cerrar ×
+      </button>
+
+      <!--Boton Home-->
+      <a href="index.html"><button class="interactivo boton">Home</button></a>
+
+      <!--Boton Ocio con accordion-->
+      <button class="accordion">
+        <div class="accordionMn"><span>Ocio</span></div>
+        <!-- <div style="padding: 1px;"></div> -->
+        <div class="submenus accordion-focus:submenus">
+          <a class="interactivo submenusA" href="Ocio/Juegos.html">Juegos</a>
+          <a class="interactivo2 submenusA" href="Ocio/Libros.html">Libros</a>
+          <a class="interactivo2 submenusA" href="Ocio/Series.html">Series</a>
+          <a class="interactivo2 submenusA" href="Ocio/Peliculas.html">Peliculas
+          </a>
+        </div>
+      </button>
+
+      <!--Boton Viajes con accordion-->
+      <button class="accordion">
+        <div class="accordionMn"><span>Viajes</span></div>
+        <div class="submenus accordion-focus:submenus">
+          <a class="interactivo2 submenusA" href="Viajes/Hoteles.html">
+            Hoteles
+          </a>
+          <a class="interactivo2 submenusA" href="Viajes/Patrimonios.html">
+            Patrimonios culturales
+          </a>
+        </div>
+      </button>
+    </div>
+  </div>
+
+  <canvas id="canvas1"></canvas>
+    <pre>
+      
+    <b>wasd</b>-> move
+    <b>z x</b>-> elegir 
+    defensa
+    <b>1</b>-> elegir 
+     defensa 1
+    <b>2</b>-> elegir
+     defensa 2
+    <b>3</b>-> elegir
+    defensa 3
+    <b>flechas</b>-> elegir 
+     dirrecion para 
+     las defensas
+    <b>ctrl</b>-> poner la
+     defensa
+    <b>espacio</b>-> disparar</pre>
+
+  <main id="Main"></main>
+  <!--Scripts-->
+  <script src="https://kit.fontawesome.com/4ba71b72f6.js" crossorigin="anonymous"></script>
+  <script src="Recursos/Js/SideBar.js"></script>
+  <script src="Recursos/Js/gameTowerDefend.js"></script>
+</body>
+
+</html>
