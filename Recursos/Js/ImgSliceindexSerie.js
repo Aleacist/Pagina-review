@@ -33,6 +33,6 @@ function RestoSerie(){
     };
 }
 
-RestoSerie();
 numbImgS();
+RestoSerie();
 window.addEventListener("resize", numbImgS);

@@ -34,6 +34,6 @@ function RestoLibro() {
   }
 }
 
-RestoLibro();
 numbImgL();
+RestoLibro();
 window.addEventListener("resize", numbImgL);

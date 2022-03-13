@@ -1,6 +1,6 @@
 
 const NombreRegistrado = ["aday", "pepe", "antonio", "pedro", "sara"];
-const ContraseñaRegistrada = ["1", "2","3","4","5"];
+const ContrasenaRegistrada = ["1", "2","3","4","5"];
 
 function AbrirModal() {
     document.getElementById("modal").style.display = "block";
@@ -22,15 +22,15 @@ function comprobar() {
     console.log(Nombre);
     for (i = 0; i < NombreRegistrado.length; i++) {
         if (Nombre == NombreRegistrado[i]) {
-            for (i = 0; i < ContraseñaRegistrada.length; i++) {
-                if (Contraseña == ContraseñaRegistrada[i]) {
+            for (i = 0; i < ContrasenaRegistrada.length; i++) {
+                if (Contraseña == ContrasenaRegistrada[i]) {
                     if (contador != contador2){
                         alert("No coincide los datos");
                         return
                     }            alert("has entrado");
                 } else contador2 += 1;
             }
-            if (contador2 == ContraseñaRegistrada.length) {
+            if (contador2 == ContrasenaRegistrada.length) {
                 alert("contraseña incorrecta");
                 return
             }

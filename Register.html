@@ -94,7 +94,7 @@
   </div>
 
   <main id="Main">
-    <form action="Guardado.html">
+    <form onsubmit="Register()">
       <br>
       <fieldset class="formularioRegistrarse">
         <legend>Datos Usuario</legend>
@@ -105,7 +105,6 @@
           <input type="password" id="password1" name="password" required> <br>
           <label for="password2">Repetir contraseña:</label><br>
           <input type="password" id="password2" name="password" required> <br>
-          <input type="reset">
         </div>
       </fieldset><br>
       <fieldset class="formularioRegistrarse">
@@ -131,7 +130,7 @@
 
           <label class="genero"><input type="checkbox" >Acepta los terminos</label><br>
           <label class="genero"><input type="checkbox" >Desea recibir correos</label><br><br>
-          <input type="submit" value="Aceptar">
+          <input type="submit" value="Aceptar" >          <input type="reset">
           
         </div>
       </fieldset>
@@ -220,6 +219,7 @@
     then close all select boxes:*/
     document.document.addEventListener("click", closeAllSelect);</script>
   <script src="https://kit.fontawesome.com/4ba71b72f6.js" crossorigin="anonymous"></script>
+  <script src="Recursos/Js/register.js"></script>
   <script src="Recursos/Js/SideBar.js"></script>
 </body>
 
