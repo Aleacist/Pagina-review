@@ -307,7 +307,7 @@ function chooseDefender() {
   (c.strokeStyle = card2.color),
     c.strokeRect(card2.x, card2.y, card2.width, card2.height);
   c.fillRect(card2.x, card2.y, card2.width, card2.height);
-  c.drawImage(wall1, 1, 0, 27, 33, card2.x+5, card2.y-2, card2.width, card2.height);
+//   c.drawImage(wall1, 1, 0, 27, 33, card2.x+5, card2.y-2, card2.width, card2.height);
   c.fillStyle = "gold";
   c.fillText(defenderCostWall, card2.x+5, card2.y+20);
 
